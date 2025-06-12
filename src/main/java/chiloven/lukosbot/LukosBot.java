@@ -18,19 +18,24 @@ public class LukosBot extends TelegramLongPollingBot {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
 
-            String reply = dispatcher.handle(messageText);
+            if (messageText.startsWith("/")) {
+                String cleanText = messageText.replaceFirst("@[\\w_]+", "");
 
-            SendMessage message = new SendMessage();
-            message.setChatId(String.valueOf(chatId));
-            message.setText(reply);
+                String reply = dispatcher.handle(cleanText);
 
-            try {
-                execute(message);
-            } catch (TelegramApiException e) {
-                logger.error("发送消息时出错: ", e);
+                SendMessage message = new SendMessage();
+                message.setChatId(String.valueOf(chatId));
+                message.setText(reply);
+
+                try {
+                    execute(message);
+                } catch (TelegramApiException e) {
+                    logger.warn("发送消息时出错: {}", e.getMessage());
+                }
             }
         }
     }
+
 
     @Override
     public String getBotUsername() {
