@@ -24,6 +24,7 @@ public class HelpDispatcher {
                                     
                                     /help <command>   - 查看帮助
                                     /github           - github 功能说明
+                                    /luck             - 获取今天的人品值
                                     
                                     更多详细用法使用 `/help` 加命令（例：`/help github`）
                                     """);
