@@ -16,6 +16,7 @@ The bot currently supports the following commands:
     - `search <keywords>` - Search for repositories, issues, or users.
     - `repo <owner>/<repo>` - Get information about a repository.
     - `user <username>` - Get information about a user/organisation.
+- `/luck` - today's luck
 
 ## Planned Features
 
@@ -23,7 +24,6 @@ The bot currently supports the following commands:
 - `/ping` - Check the bot's responsiveness.
 - `/translate` - Translate text between languages.
 - `/music` - Search and play music.
-- `/luck` - Today's luck prediction.
 - `/cave` - Echo cave...
 
 ## Contributing
