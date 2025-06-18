@@ -1,4 +1,4 @@
-package chiloven.lukosbot.Modules.GitHub;
+package chiloven.lukosbot.modules.github;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -15,9 +15,9 @@ public class Api {
     private static final String BASE_URL = "https://api.github.com";
 
     /**
-     * 获取 GitHub 用户信息
+     * 获取 github 用户信息
      *
-     * @param username GitHub 用户名
+     * @param username github 用户名
      * @return JsonObject 包含用户信息
      * @throws IOException 如果请求失败或网络错误
      */
@@ -26,10 +26,10 @@ public class Api {
     }
 
     /**
-     * 获取 GitHub 仓库信息
+     * 获取 github 仓库信息
      *
-     * @param owner GitHub 用户名或组织名
-     * @param repo  GitHub 仓库名
+     * @param owner github 用户名或组织名
+     * @param repo  github 仓库名
      * @return JsonObject 包含仓库信息
      * @throws IOException 如果请求失败或网络错误
      */
@@ -38,7 +38,7 @@ public class Api {
     }
 
     /**
-     * 搜索 GitHub 仓库
+     * 搜索 github 仓库
      *
      * @param keyword 搜索关键词
      * @return JsonObject 包含搜索结果

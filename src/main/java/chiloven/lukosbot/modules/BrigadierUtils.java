@@ -1,6 +1,6 @@
-package chiloven.lukosbot.Modules;
+package chiloven.lukosbot.modules;
 
-import chiloven.lukosbot.Core.CommandSource;
+import chiloven.lukosbot.core.CommandSource;
 import com.mojang.brigadier.arguments.ArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;

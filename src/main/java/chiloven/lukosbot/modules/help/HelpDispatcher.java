@@ -1,14 +1,14 @@
-package chiloven.lukosbot.Modules.Help;
+package chiloven.lukosbot.modules.help;
 
-import chiloven.lukosbot.Core.CommandSource;
+import chiloven.lukosbot.core.CommandSource;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static chiloven.lukosbot.Modules.BrigadierUtils.argument;
-import static chiloven.lukosbot.Modules.BrigadierUtils.literal;
+import static chiloven.lukosbot.modules.BrigadierUtils.argument;
+import static chiloven.lukosbot.modules.BrigadierUtils.literal;
 import static com.mojang.brigadier.arguments.StringArgumentType.word;
 
 public class HelpDispatcher {
@@ -23,7 +23,7 @@ public class HelpDispatcher {
                                     支持的命令列表：
                                     
                                     /help <command>   - 查看帮助
-                                    /github           - GitHub 功能说明
+                                    /github           - github 功能说明
                                     
                                     更多详细用法使用 `/help` 加命令（例：`/help github`）
                                     """);
@@ -33,27 +33,27 @@ public class HelpDispatcher {
                         .then(literal("github")
                                 .executes(ctx -> {
                                     ctx.getSource().reply("""
-                                            GitHub 功能说明：
+                                            github 功能说明：
                                             
-                                            /github user <用户名>        - 查询 GitHub 用户信息
-                                            /github repo <owner>/<repo> - 查询 GitHub 仓库信息
-                                            /github search <关键词>     - 搜索 GitHub 仓库
+                                            /github user <用户名>        - 查询 github 用户信息
+                                            /github repo <owner>/<repo> - 查询 github 仓库信息
+                                            /github search <关键词>     - 搜索 github 仓库
                                             """);
-                                    logger.info("GitHub help command executed.");
+                                    logger.info("github help command executed.");
                                     return 1;
                                 })
                                 .then(literal("user").executes(ctx -> {
-                                    ctx.getSource().reply("/github user <用户名>   - 查询 GitHub 用户信息");
-                                    logger.info("GitHub user help command executed.");
+                                    ctx.getSource().reply("/github user <用户名>   - 查询 github 用户信息");
+                                    logger.info("github user help command executed.");
                                     return 1;
                                 }))
                                 .then(literal("repo").executes(ctx -> {
-                                    ctx.getSource().reply("/github repo <owner>/<repo>   - 查询 GitHub 仓库信息");
-                                    logger.info("GitHub repo help command executed.");
+                                    ctx.getSource().reply("/github repo <owner>/<repo>   - 查询 github 仓库信息");
+                                    logger.info("github repo help command executed.");
                                     return 1;
                                 }))
                                 .then(literal("search").executes(ctx -> {
-                                    ctx.getSource().reply("/github search <关键词>   - 搜索 GitHub 仓库");
+                                    ctx.getSource().reply("/github search <关键词>   - 搜索 github 仓库");
                                     return 1;
                                 }))
                         )

@@ -1,4 +1,4 @@
-package chiloven.lukosbot.Modules.GitHub;
+package chiloven.lukosbot.modules.github;
 
 import com.google.gson.JsonObject;
 

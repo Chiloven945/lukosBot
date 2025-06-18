@@ -1,6 +1,6 @@
-package chiloven.lukosbot.Modules.GitHub;
+package chiloven.lukosbot.modules.github;
 
-import chiloven.lukosbot.Core.CommandSource;
+import chiloven.lukosbot.core.CommandSource;
 import com.google.gson.JsonObject;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.StringReader;
@@ -8,8 +8,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static chiloven.lukosbot.Modules.BrigadierUtils.argument;
-import static chiloven.lukosbot.Modules.BrigadierUtils.literal;
+import static chiloven.lukosbot.modules.BrigadierUtils.argument;
+import static chiloven.lukosbot.modules.BrigadierUtils.literal;
 import static com.mojang.brigadier.arguments.StringArgumentType.greedyString;
 
 public class GitHubDispatcher {
@@ -61,7 +61,7 @@ public class GitHubDispatcher {
     }
 
     public String handle(String message) {
-        logger.info("处理 GitHub 命令: {}", message);
+        logger.info("处理 github 命令: {}", message);
         String input = message.trim().replaceFirst("^/", "");
         CommandSource src = new CommandSource();
         try {
@@ -78,12 +78,12 @@ public class GitHubDispatcher {
         try {
             JsonObject userObj = Api.getUser(username);
             if (userObj.has("message")) {
-                logger.warn("查询 GitHub 用户失败: {}", userObj.get("message").getAsString());
+                logger.warn("查询 github 用户失败: {}", userObj.get("message").getAsString());
                 return "找不到用户：" + username;
             }
             return User.fromJson(userObj).toString();
         } catch (Exception e) {
-            logger.error("查询 GitHub 用户出错", e);
+            logger.error("查询 github 用户出错", e);
             return "查询GitHub用户时出错：" + e.getMessage();
         }
     }
@@ -97,12 +97,12 @@ public class GitHubDispatcher {
             }
             JsonObject repoObj = Api.getRepo(repoParts[0], repoParts[1]);
             if (repoObj.has("message")) {
-                logger.warn("查询 GitHub 仓库失败: {}", repoObj.get("message").getAsString());
+                logger.warn("查询 github 仓库失败: {}", repoObj.get("message").getAsString());
                 return "找不到仓库：" + repoArg;
             }
             return Repo.fromJson(repoObj).toString();
         } catch (Exception e) {
-            logger.error("查询 GitHub 仓库出错", e);
+            logger.error("查询 github 仓库出错", e);
             return "查询GitHub仓库时出错：" + e.getMessage();
         }
     }
@@ -113,7 +113,7 @@ public class GitHubDispatcher {
             SearchResult result = SearchResult.fromJson(resultObj);
             return result.briefTop(3);
         } catch (Exception e) {
-            logger.error("GitHub 搜索出错", e);
+            logger.error("github 搜索出错", e);
             return "搜索GitHub仓库时出错：" + e.getMessage();
         }
     }

@@ -1,4 +1,4 @@
-package chiloven.lukosbot.Core;
+package chiloven.lukosbot.core;
 
 public class CommandSource {
     private String reply;

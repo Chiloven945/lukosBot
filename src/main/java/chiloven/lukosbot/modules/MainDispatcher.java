@@ -1,7 +1,7 @@
-package chiloven.lukosbot.Modules;
+package chiloven.lukosbot.modules;
 
-import chiloven.lukosbot.Modules.GitHub.GitHubDispatcher;
-import chiloven.lukosbot.Modules.Help.HelpDispatcher;
+import chiloven.lukosbot.modules.github.GitHubDispatcher;
+import chiloven.lukosbot.modules.help.HelpDispatcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
